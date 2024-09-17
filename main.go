@@ -10,13 +10,31 @@ import "fmt"
 
 //
 
-func Hello(name string) string {
-	if name != "" {
-		return "Hello " + name + "!"
+func Hello(name string, language string) string {
+
+	curPrefix := "Hello "
+	curSuffix := "!"
+	hindi := "hindi"
+	if name == "" {
+		name = "World"
 	}
-	return "Hello World!"
+	if language == hindi {
+		curPrefix = "Namaste "
+	}
+	return curPrefix + name + curSuffix
 }
 
 func main() {
 	fmt.Println()
+}
+
+func Sum(number []int) int {
+	ans := 0
+	// for i := 0; i < len(number); i++ {
+	// 	ans += number[i]
+	// }
+	for _, num := range number {
+		ans += num
+	}
+	return ans
 }
