@@ -38,3 +38,32 @@ func Sum(number []int) int {
 	}
 	return ans
 }
+
+func SumAll(allSlices ...[]int) []int {
+	sum := make([]int, len(allSlices))
+	for i, slice := range allSlices {
+		sum[i] = Sum(slice)
+	}
+	return sum
+}
+
+func SumTails(allSlices ...[]int) []int {
+	var sum []int
+	for _, slice := range allSlices {
+		if len(slice) == 0 {
+			sum = append(sum, 0)
+		} else {
+			sum = append(sum, Sum(slice[1:]))
+		}
+	}
+	return sum
+}
+
+func repeat(char string) string {
+	num := 5
+	var ans string
+	for i := 0; i < num; i++ {
+		ans += char
+	}
+	return ans
+}
