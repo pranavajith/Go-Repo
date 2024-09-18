@@ -7,7 +7,7 @@ type Dictionary map[string]string
 func (d Dictionary) Search(word string) (string, error) {
 	_, ok := d[word]
 	if !ok {
-		return "", errors.New("Couldn't find word")
+		return "", errors.New("couldn't find word")
 	}
 	return d[word], nil
 }
