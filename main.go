@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"math"
+)
 
 // 17-09
 
@@ -22,10 +24,6 @@ func Hello(name string, language string) string {
 		curPrefix = "Namaste "
 	}
 	return curPrefix + name + curSuffix
-}
-
-func main() {
-	fmt.Println()
 }
 
 func Sum(number []int) int {
@@ -66,4 +64,41 @@ func repeat(char string) string {
 		ans += char
 	}
 	return ans
+}
+
+func perimeter(width float64, height float64) float64 {
+	return 2 * (width + height)
+}
+
+func area(width float64, height float64) float64 {
+	return width * height
+}
+
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+
+type Circle struct {
+	Radius float64
+}
+
+func perimRect(rect Rectangle) float64 {
+	return (rect.Width + rect.Height) * 2
+}
+func areaRect(rect Rectangle) float64 {
+	return (rect.Width * rect.Height)
+}
+func perimCircle(c Circle) float64 {
+	return 2 * math.Pi * c.Radius
+}
+func areaCircle(c Circle) float64 {
+	return math.Pi * c.Radius * c.Radius
+}
+
+func (r Rectangle) Area() float64 {
+	return r.Height * r.Width
+}
+func (c Circle) Area() float64 {
+	return c.Radius * c.Radius * math.Pi
 }
