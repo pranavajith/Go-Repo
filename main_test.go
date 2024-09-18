@@ -7,6 +7,10 @@ import (
 	"testing"
 )
 
+func T(t *testing.T) {
+
+}
+
 func TestHello(t *testing.T) {
 	t.Run("Saying Hello to someone", func(t *testing.T) {
 		got := Hello("Pranav", "")
